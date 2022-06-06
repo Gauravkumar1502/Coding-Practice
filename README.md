@@ -6,11 +6,11 @@
     <!-- Coding Problems -->
     <li> <a href="/codingproblems/"> Coding Problems </a> </li>
     <ol>
-        <li> <a href="//codingproblems/leetcode/"> Leetcode </a> </li>
+        <li> <a href="/codingproblems/leetcode/"> Leetcode </a> </li>
         <!-- Leetcode -->
         <ol>
-            <li> <a href="//codingproblems/leetcode/Problem1295.java"> Find Numbers with Even Number of Digits </a> </li>
-            <li> <a href="//codingproblems/leetcode/Problem1672.java"> Richest Customer Wealth </a> </li>
+            <li> <a href="/codingproblems/leetcode/Problem1295.java"> Find Numbers with Even Number of Digits </a> </li>
+            <li> <a href="/codingproblems/leetcode/Problem1672.java"> Richest Customer Wealth </a> </li>
         </ol>
     </ol>
     <!-- DSA -->
