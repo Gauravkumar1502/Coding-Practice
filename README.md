@@ -24,6 +24,9 @@
                 </ol>
                 <li><a href="/dsa/algorithms/sorting">Sorting</a></li>
             </ol>  
-            <li><a href="/dsa/algorithms">Data Structures Implementations</a></li>    
+            <li><a href="/dsa/datastructures">Data Structures Implementations</a></li>
+            <ol>
+            <li><a href="/dsa/datastructures/ArrayList.java">Array List</a></li>
+            </ol>    
         </ol>
 </ol>
