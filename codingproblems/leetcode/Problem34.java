@@ -57,7 +57,9 @@ public class Problem34 {
         // }
 
         result[0] = search(nums, target, true);
-
+        // if start index is already -1 no need to check last index
+        if (result[0] == -1)
+            return result;
         // for end index
         // start = 0;
         // end = nums.length - 1;
