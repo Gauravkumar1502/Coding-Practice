@@ -48,7 +48,7 @@ public class Problem852 {
     // }
 
     // Using binary Search search
-    public int peakIndexInMountainArray(int[] arr) {
+    public static int peakIndexInMountainArray(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
         while (start < end) {
