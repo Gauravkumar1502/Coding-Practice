@@ -1,5 +1,8 @@
 package codingproblems.leetcode;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /*
  * 442. Find All Duplicates in an Array
  * 
