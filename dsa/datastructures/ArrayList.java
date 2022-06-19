@@ -22,7 +22,7 @@ public class ArrayList {
         array = new int[capacity];
     }
 
-    public ArrayList(int[] arr) {
+    public ArrayList(int... arr) {
         capacity = arr.length * 2;
         array = new int[capacity];
         for (int i = 0; i < arr.length; i++) {
@@ -91,6 +91,15 @@ public class ArrayList {
 
     public void set(int index, int element) {
         array[index] = element;
+    }
+
+    public void trimToLength() {
+        int[] newArray = new int[length];
+        for (int i = 0; i < length; i++) {
+            newArray[i] = array[i];
+        }
+        array = newArray;
+        capacity = length;
     }
 
     public void sort() {
@@ -175,6 +184,21 @@ public class ArrayList {
         return removed;
     }
 
+    public void removeRange(int from, int to) {
+        if (from > to) {
+            throw new IllegalArgumentException();
+        }
+        if (from < 0 || from >= length) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (to < 0 || to >= length) {
+            throw new IndexOutOfBoundsException();
+        }
+        while (from < to) {
+            remove(from++);
+        }
+    }
+
     public void removeAll(int element) {
         for (int i = 0; i < length; i++) {
             if (array[i] == element) {
@@ -233,6 +257,15 @@ public class ArrayList {
             }
         }
         return false;
+    }
+
+    public boolean containsAll(int... elements) {
+        for (int element : elements) {
+            if (!contains(element)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public int get(int index) {
