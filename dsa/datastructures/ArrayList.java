@@ -106,10 +106,45 @@ public class ArrayList {
     }
 
     private void sortDescending() {
-
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[i] < array[j]) {
+                    swap(i, j);
+                }
+            }
+        }
     }
 
     private void sortAscending() {
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[i] > array[j]) {
+                    swap(i, j);
+                }
+            }
+        }
+    }
+
+    public void shuffle() {
+        for (int i = 0; i < length; i++) {
+            int j = (int) (Math.random() * length);
+            swap(i, j);
+        }
+    }
+
+    public int[] retainAll(int... arr) {
+        ArrayList result = new ArrayList();
+        for (int element : arr) {
+            if (result.contains(element)) {
+                continue;
+            }
+            for (int i : array) {
+                if (element == i) {
+                    result.add(element);
+                }
+            }
+        }
+        return result.toArray();
     }
 
     private void swap(int index1, int index2) {
@@ -138,6 +173,14 @@ public class ArrayList {
         }
         length--;
         return removed;
+    }
+
+    public void removeAll(int element) {
+        for (int i = 0; i < length; i++) {
+            if (array[i] == element) {
+                remove(i);
+            }
+        }
     }
 
     public void removeAll(int... elements) {
@@ -203,6 +246,16 @@ public class ArrayList {
             }
         }
         return -1;
+    }
+
+    public int[] allIndexOf(int element) {
+        ArrayList result = new ArrayList();
+        for (int i = 0; i < length; i++) {
+            if (array[i] == element) {
+                result.add(i);
+            }
+        }
+        return result.toArray();
     }
 
     public int lastIndexOf(int element) {
