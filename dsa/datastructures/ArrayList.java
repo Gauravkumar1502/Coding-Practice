@@ -194,9 +194,15 @@ public class ArrayList {
         if (to < 0 || to >= length) {
             throw new IndexOutOfBoundsException();
         }
-        while (from < to) {
-            remove(from++);
+        // while (from < to) {
+        // remove(from++);
+        // }
+        // OR
+        while (to < length) {
+            System.out.println(from + " - " + to);
+            array[from++] = array[to++];
         }
+        length = from;
     }
 
     public void removeAll(int element) {
@@ -212,6 +218,20 @@ public class ArrayList {
             int index = indexOf(element);
             if (index != -1) {
                 remove(index);
+            }
+        }
+    }
+
+    /**
+     * @param element
+     *                    Index of the element to be removed
+     * @param replacement
+     *                    Value that replace the element value
+     */
+    public void replaceAll(int element, int replacement) {
+        for (int i = 0; i < length; i++) {
+            if (array[i] == element) {
+                array[i] = replacement;
             }
         }
     }
