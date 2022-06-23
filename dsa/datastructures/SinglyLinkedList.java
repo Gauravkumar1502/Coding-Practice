@@ -1,27 +1,35 @@
 package dsa.datastructures;
 
-public class SinglyLinkedList {
+import javax.naming.OperationNotSupportedException;
 
-    class Node {
+public class SinglyLinkedList {
+    /**
+     * Node
+     */
+    public class Node {
         int data;
         Node next;
 
-        public Node(int data) {
+        Node(int data) {
             this.data = data;
         }
     }
 
-    private Node head;
-    private Node tail;
-    private int length;
+    Node head;
+    Node tail;
+    int length;
 
     public SinglyLinkedList() {
     }
 
     public SinglyLinkedList(int value) {
-        head = new Node(value);
-        tail = head;
-        length = 1;
+        add(value);
+    }
+
+    public SinglyLinkedList(int... values) {
+        for (int value : values) {
+            add(value);
+        }
     }
 
     public void add(int value) {
@@ -35,20 +43,85 @@ public class SinglyLinkedList {
         length++;
     }
 
+    public void add(int index, int value) {
+        if (index > length) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index == 0) {
+            shift(value);
+            return;
+        }
+        if (index == length) {
+            add(value);
+            return;
+        }
+        Node current = head;
+        while (index-- > 1) {
+            current = current.next;
+        }
+        Node newNode = new Node(value);
+        newNode.next = current.next;
+        current.next = newNode;
+        length++;
+    }
+
+    public void shift(int value) {
+        Node currNode = new Node(value);
+        currNode.next = head;
+        head = currNode;
+        length++;
+    }
+
+    public void unshift() {
+        if (isEmpty()) {
+            throw new IllegalStateException("List already Empty");
+        }
+        head = head.next;
+        length--;
+    }
+
+    public int peek() {
+        return tail.data;
+    }
+
+    public boolean isEmpty() {
+        return length == 0;
+    }
+
+    public int size() {
+        return length;
+    }
+
+    public int indexOf(int element) {
+        Node currNode = head;
+        int i = 0;
+        while (currNode != null) {
+            if (currNode.data == element) {
+                return i;
+            }
+            currNode = currNode.next;
+            i++;
+        }
+        return -1;
+    }
+
+    public boolean contains(int element) {
+        return indexOf(element) != -1;
+    }
+
     @Override
     public String toString() {
         if (head == null) {
             return "[]";
         }
-        StringBuilder sb = new StringBuilder("[");
+        StringBuilder result = new StringBuilder("[");
         Node current = head;
         while (current != null) {
-            sb.append(current.data);
-            sb.append(", ");
+            result.append(current.data + ", ");
             current = current.next;
         }
-        sb.delete(sb.length() - 2, sb.length());
-        sb.append("]");
-        return sb.toString();
+        result.delete(result.length() - 2, result.length());
+        result.append("]");
+        return result.toString();
     }
 }
