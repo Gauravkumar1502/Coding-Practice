@@ -66,9 +66,14 @@ public class SinglyLinkedList {
     }
 
     public void shift(int value) {
-        Node currNode = new Node(value);
-        currNode.next = head;
-        head = currNode;
+        if (head == null) {
+            head = new Node(value);
+            tail = head;
+        } else {
+            Node newNode = new Node(value);
+            newNode.next = head;
+            head = newNode;
+        }
         length++;
     }
 
@@ -77,6 +82,25 @@ public class SinglyLinkedList {
             throw new IllegalStateException("List already Empty");
         }
         head = head.next;
+        length--;
+    }
+
+    public void remove() {
+        if (isEmpty()) {
+            throw new IllegalStateException("List already Empty");
+        }
+        if (head == tail) {
+            head = null;
+            tail = null;
+            length--;
+            return;
+        }
+        Node current = head;
+        while (current.next != tail) {
+            current = current.next;
+        }
+        current.next = null;
+        tail = current;
         length--;
     }
 
