@@ -77,31 +77,56 @@ public class SinglyLinkedList {
         length++;
     }
 
-    public void unshift() {
+    public int unshift() {
         if (isEmpty()) {
             throw new IllegalStateException("List already Empty");
         }
+        int value = head.data;
         head = head.next;
         length--;
+        return value;
     }
 
-    public void remove() {
+    public int remove() {
         if (isEmpty()) {
             throw new IllegalStateException("List already Empty");
         }
         if (head == tail) {
+            int value = head.data;
             head = null;
             tail = null;
             length--;
-            return;
+            return value;
         }
         Node current = head;
         while (current.next != tail) {
             current = current.next;
         }
+        int value = tail.data;
         current.next = null;
         tail = current;
         length--;
+        return value;
+    }
+
+    public int remove(int index) {
+        if (index >= length) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index == 0) {
+            return unshift();
+        }
+        if (index == length - 1) {
+            return remove();
+        }
+        Node current = head;
+        while (index-- > 1) {
+            current = current.next;
+        }
+        int value = current.next.data;
+        current.next = current.next.next;
+        length--;
+        return value;
     }
 
     public int peek() {
