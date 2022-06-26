@@ -129,6 +129,23 @@ public class SinglyLinkedList {
         return value;
     }
 
+    public void clear() {
+        head = null;
+        tail = null;
+        length = 0;
+    }
+
+    public int get(int index) {
+        if (index >= length) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node current = head;
+        while (index-- > 0) {
+            current = current.next;
+        }
+        return current.data;
+    }
+
     public int peek() {
         return tail.data;
     }
