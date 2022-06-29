@@ -12,6 +12,7 @@
             <li> <a href="/codingproblems/leetcode/Problem1295.java"> Find Numbers with Even Number of Digits </a> </li>
             <li> <a href="/codingproblems/leetcode/Problem1672.java"> Richest Customer Wealth </a> </li>
         </ol>
+        <li> <a href="/codingproblems/telegram/"> Leetcode </a> </li>
     </ol>
     <!-- DSA -->
     <li> <a href="/dsa">DSA</a> </li>
