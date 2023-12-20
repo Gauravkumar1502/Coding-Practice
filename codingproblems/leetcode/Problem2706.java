@@ -28,8 +28,8 @@ Constraints:
  */
 public class Problem2706 {
     public static void main(String[] args) {
-        System.out.println(buyChoco(new int[]{1,2,2}, 3));
-        System.out.println(buyChoco(new int[]{3,2,3}, 3));
+        System.out.println(buyChoco(new int[]{1,2,2}, 3));  // Expected: 0
+        System.out.println(buyChoco(new int[]{3,2,3}, 3));  // Expected: 3
     }
 
     public static int buyChoco(int[] prices, int money) {
