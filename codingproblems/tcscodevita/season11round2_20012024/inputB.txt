@@ -1,0 +1,12 @@
+is A<B
+Yes
+print A
+si
+is A>B
+Yes
+print B
+No
+print A
+si
+A B
+1 2

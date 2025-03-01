@@ -1,6 +1,4 @@
-package dsa.datastructures;
-
-import javax.naming.OperationNotSupportedException;
+package dsa.dataStructures;
 
 public class SinglyLinkedList {
     /**

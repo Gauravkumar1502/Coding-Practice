@@ -1,8 +1,8 @@
 package codingproblems.leetcode;
 
-import java.util.List;
-
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
 
 /*
  * 119. Pascal's Triangle II
@@ -46,6 +46,21 @@ public class Problem119 {
             }
         }
         return result;
+    }
+
+    public List<Integer> getRow1(int rowIndex) {
+        return IntStream.range(0, rowIndex + 1)
+                .map(i -> combination(rowIndex, i)).boxed().toList();
+    }
+
+    private int combination(int n, int r) {
+        return factorial(n) / (factorial(r) * factorial(n - r));
+    }
+
+    private int factorial(int n) {
+        if (n == 0)
+            return 1;
+        return n * factorial(n - 1);
     }
     // public List<Integer> getRow(int rowIndex) {
     // List<Integer> result = new ArrayList<>(rowIndex);

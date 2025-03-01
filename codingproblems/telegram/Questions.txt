@@ -1,0 +1,57 @@
+Better Compression
+
+Consider a string, S, that is a series of characters, each followed by its
+frequency as an integer. The string is not compressed correctly, so there may
+be multiple occurrences of the same character. A compressed string
+will consist of one instance of each character in alphabetical order followed
+by the total count of that character within the string.
+
+Example
+The string 'a3c9b2c1 ' has two instances where 'c' is followed by a count: once
+with 9 occurrences, and again with 1. It should be compressed to 'a3b2c1O'.
+
+Function Description
+Complete the function betterCompression below.
+
+Sample Input 1
+a12b56c1
+Sample Output 1
+a12b56c1
+
+Explanation
+Nothing is changed because each character occurred only once and they are already sorted ascending.
+
+Sample Input 2
+a12c56a1b5
+Sample Output 2
+a13b5c56
+Explanation
+Function
+'a' occurs twice: 12times for the first occurrence and 1 time in the second
+occurrence for a total 13. Sort 'b' and 'c' in order in the final compression.
+
+
+
+2. Preprocess Dates
+
+On a web form, users are asked to enter dates which come in as strings. Before
+storing them to the dptabase, they need to be converted to a standard date
+format. Write a function to convert the dates as described.
+
+Given a date string in the format Day Month Year, where:
+
+Day a string in the form "1st", "2nd", "3rd", "21st", "22nd", "23rd", "31st" and
+all others are the number + "th, e.g. "4th" or "12th".
+
+Month is the first three letters of the English language months, like "Jan" for
+January through "Dec" for December.
+
+Year is 4  digits ranging from 1900 to 2100.
+
+Convert the date string "Day Month Year" to the date string "YYYY-MM-DD"
+in the format "4 digit year - 2 digit month - 2 digit day".
+
+Example
+• 1st Mar 1974 -> 1974-03-01
+• 22nd Jan 2013 -> 2013-01-22
+• 7th Apr 1904 -> 1904-04-07

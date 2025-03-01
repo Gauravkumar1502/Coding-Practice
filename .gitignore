@@ -1,5 +1,4 @@
-# Compiled class file
 *.class
-
-# Main file is used for testing all program
-Main.java
+bin/
+target/
+.idea/

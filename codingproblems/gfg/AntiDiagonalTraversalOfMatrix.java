@@ -27,8 +27,8 @@ Example 2:
     Input:
     N = 3
     matrix[][] = 3 2 3
-                4 5 1
-                7 8 9
+                 4 5 1
+                 7 8 9
     Output:
     3 2 4 3 5 7 1 8 9
 

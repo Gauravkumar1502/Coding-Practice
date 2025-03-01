@@ -1,7 +1,7 @@
 package codingproblems.leetcode;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * 118. Pascal's Triangle
